@@ -34,25 +34,24 @@ function getTextScore(id, answer, score) {
 }
 
 function getRadioScore(name, answer, score) {
+
   var questions = document.getElementsByName(name);
   var question = _.find(questions, function(question) {
     return question.checked && question.value === answer;
   });
   var isRight = !!question;
+
   return isRight ? score : 0;
 }
 
 function getCheckboxScore(name, answer, score) {
-  count = 0;
-  string = '';
-  var problems = document.getElementsByName(name);
-  for (var i = 0; i < problems.length; i++) {
-    if (problems[i].checked) {
-      string += problems[i].value;
-    }
+
+  var result = 0;
+  var questions = document.getElementsByName(name);
+  var selects = _.filter(questions, {checked : true});
+  if (_.map(selects, 'value').join('') === answer) {
+    result =  score;
   }
-  if (string === answer) {
-    count = score;
-  }
-  return count;
+  
+  return result;
 }
