@@ -30,23 +30,16 @@ function getScore() {
 }
 
 function getTextScore(id, answer, score) {
-  count = 0;
-  if (document.getElementById(id).value === answer) {
-    count = score;
-  }
-  return count;
+  return document.getElementById(id).value ? score : 0;
 }
 
 function getRadioScore(name, answer, score) {
-  count = 0;
-  var problems = document.getElementsByName(name);
-  for (var i = 0; i < problems.length; i++) {
-    if (problems[i].checked && problems[i].value === answer) {
-      count = score;
-      break;
-    }
-  }
-  return count;
+  var questions = document.getElementsByName(name);
+  var question = _.find(questions, function(question) {
+    return question.checked && question.value === answer;
+  });
+  var isRight = !!question;
+  return isRight ? score : 0;
 }
 
 function getCheckboxScore(name, answer, score) {
