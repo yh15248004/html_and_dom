@@ -1,9 +1,36 @@
 function printScore() {
 
+  validateText();
   var scoreText = document.getElementById("score");
   scoreText.value = getScore();
 
   return false;
+}
+
+function validateText() {
+  if (!validateRequired(document.getElementById('student_class').value, "必须填写班级！")) {
+    document.getElementById('student_class').focus();
+    return false;
+  }
+
+  if (!validateRequired(document.getElementById('student_number').value, "必须填写学号！")) {
+    document.getElementById('student_number').focus();
+    return false;
+  }
+
+  if (!validateRequired(document.getElementById('student_name').value, "必须填写姓名！")) {
+    document.getElementById('student_name').focus();
+    return false;
+  }
+}
+
+function validateRequired(value, alertTxt) {
+  var result = true;
+  if (value.length === 0) {
+    alert(alertTxt);
+    result = false;
+  }
+  return result;
 }
 
 function getScore() {
@@ -20,9 +47,9 @@ function getScore() {
   score += getRadioScore('radio04','X',10);
   score += getRadioScore('radio05','V',10);
 
-  score += getTextScore('pro0501','模型是对现实世界的简化和抽象,'+
+  score += getTextsScore(['pro0501'],['模型是对现实世界的简化和抽象,'+
     '模型是对所研究的系统、过程、事物或概念的一种表达形'+
-    '式。可以是物理实体;可以是某种图形;或者是一种数学表达式。',20);
+    '式。可以是物理实体;可以是某种图形;或者是一种数学表达式。'],20);
 
   return score;
 }
