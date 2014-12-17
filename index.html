@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"  />
+  <meta charset="UTF-8">
   <title>UML建模测试</title>
   <script type="text/javascript" src="./main.js"></script>
 </head>
 <body>
-  <h1 align="center">统一建模语言测试</h1>
-  <hr/>
+  <h1>统一建模语言测试</h1>
   <form name="form1" id="form" method="post">
     考试科目：<b><u>统一建模语言UML</u></b>&nbsp;&nbsp;&nbsp;&nbsp;
     时间:<b><u>100分钟</u></b>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -48,6 +47,7 @@
     <input type="checkbox" name="checkbox02" value="C" />操作(Operation)<br/>
     <input type="checkbox" name="checkbox02" value="D" />方法(Function)<br/>
     <br/>
+
     <h4>四、判断题</h4>
     1. 用例图只是用于和客户交流和沟通的,用于确定需求。
     <input type="radio" name="radio04" value="X" />X &nbsp;&nbsp;
@@ -56,11 +56,12 @@
     2. 在状态图中,终止状态在一个状态图中允许有任意多个。
     <input type="radio" name="radio05" value="X" />X &nbsp;&nbsp;
     <input type="radio" name="radio05" value="V" />V
+
     <h4>五、简答题(每题4分,共20分)</h4>
     1. 简述什么是模型以及模型的表现形式?<br/>
     <textarea id="pro0501" name="completion05" cols="55" rows="6" ></textarea>
     <br/>
-    <input type="button" value="提交" onclick="printScore();">
+    <input type="submit" value="提交" onclick="return printScore();">
 
   </form>
 </body>
