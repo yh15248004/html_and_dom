@@ -8,10 +8,8 @@ function printScore() {
 
 function getScore() {
   var score = 0;
-  score += getTextScore('pro0101','统一建模语言',5);
-  score += getTextScore('pro010201','封装性',5);
-  score += getTextScore('pro010202','继承性',5);
-  score += getTextScore('pro010203','多态性',5);
+  score += getTextsScore(['pro0101'],['统一建模语言'],5);
+  score += getTextsScore(['pro010201','pro010202','pro010203'], ['封装性','继承性','多态性'], 15);
 
   score += getRadioScore('radio01','B',10);
   score += getRadioScore('radio02','A',10);
@@ -29,8 +27,22 @@ function getScore() {
   return score;
 }
 
-function getTextScore(id, answer, score) {
-  return document.getElementById(id).value ? score : 0;
+function getTextsScore(ids, answers, score) {
+  var result = 0;
+  var questions = [];
+
+  _.forEach(ids, function(id) {
+    questions.push(document.getElementById(id));
+  });
+
+  _.forEach(answers, function(answer) {
+    var isExist = _.contains(_.map(questions, 'value'), answer);
+    if (isExist) {
+      result += score / answers.length;
+    }
+  });
+
+  return result;
 }
 
 function getRadioScore(name, answer, score) {
@@ -52,6 +64,6 @@ function getCheckboxScore(name, answer, score) {
   if (_.map(selects, 'value').join('') === answer) {
     result =  score;
   }
-  
+
   return result;
 }
