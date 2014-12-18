@@ -11,13 +11,14 @@
   <script type="text/javascript" src="./radio-topic.js"></script>
   <script type="text/javascript" src="./main.js"></script>
 
+  <link href="./dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="button.css" rel="stylesheet">
 </head>
 
 <body>
   <form name="form" id="form" method="post" autocomplete="off">
     <header>
-      <h1>统一建模语言测试</h1>
+      <h1 class="text-center">统一建模语言测试</h1>
       <table>
         <tr>
           <td>考试科目：</td>
@@ -29,7 +30,7 @@
         </tr>
         <tr>
           <td><label for="student_class">班级：</label></td>
-          <td><input type="text" id="student_class" name="student_class"></td>
+          <td><input class="form-control" type="text" id="student_class" name="student_class"></td>
           <td><label for="student_number">学号：</label></td>
           <td><input type="text" id="student_number" name="student_number"></td>
           <td><label for="student_name">姓名：</label></td>
@@ -186,7 +187,7 @@
       </ol>
     </section>
 
-    <footer>
+    <footer class="text-center">
         <input class="button button-pill button-primary" type="submit" value="计算分数" onclick="return printScore();">
     </footer>
   </form>
