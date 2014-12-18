@@ -1,52 +1,61 @@
 function printScore() {
 
-  validateText();
+  var requiredInputs = [
+      {
+        id: 'student_class',
+        text: '班级'
+      },
+      {
+        id: 'student_number',
+        text: '学号'
+      },
+      {
+        id: 'student_name',
+        text: '姓名'
+      }
+  ];
+
+  if (validateRequired(requiredInputs)) {
+    return false;
+  }
+
   var scoreText = document.getElementById("totalScore");
   scoreText.innerText = getScore();
   return false;
 }
 
-function validateText() {
-  if (!validateRequired(document.getElementById('student_class').value, "必须填写班级！")) {
-    document.getElementById('student_class').focus();
-    return false;
+function validateRequired(inputs) {
+  
+  var result = false;
+  for (var i = 0; i < inputs.length; i++) {
+    var input = inputs[i];
+    var value = document.getElementById(input.id).value;
+    if (value.length === 0) {
+      alert(input.text+'不能为空！');
+      document.getElementById(input.id).focus();
+      result = true;
+      break;
+    }
   }
 
-  if (!validateRequired(document.getElementById('student_number').value, "必须填写学号！")) {
-    document.getElementById('student_number').focus();
-    return false;
-  }
-
-  if (!validateRequired(document.getElementById('student_name').value, "必须填写姓名！")) {
-    document.getElementById('student_name').focus();
-    return false;
-  }
-}
-
-function validateRequired(value, alertTxt) {
-  var result = true;
-  if (value.length === 0) {
-    alert(alertTxt);
-    result = false;
-  }
   return result;
 }
 
 function getScore() {
   var score = 0;
-  score += getTextsScore(['pro0101'],['统一建模语言'],5);
-  score += getTextsScore(['pro010201','pro010202','pro010203'], ['封装性','继承性','多态性'], 15);
+  score += getTextsScore(['completion_1_0'],['统一建模语言'],5);
+  score += getTextsScore(['completion_2_0','completion_2_1','completion_2_2'], ['封装性','继承性','多态性'], 15);
 
-  score += getRadioScore('radio01',['B'],10);
-  score += getRadioScore('radio02',['A'],10);
+  score += getRadioScore('choice_1',['B'],10);
+  score += getRadioScore('choice_2',['A'],10);
 
-  score += getCheckboxScore('checkbox01',['ABD'],10);
-  score += getCheckboxScore('checkbox02',['ABC'],10);
+  score += getCheckboxScore('mcq_1',['ABD'],10);
+  score += getCheckboxScore('mcq_2',['ABC'],10);
 
-  score += getRadioScore('radio04',['X'],10);
-  score += getRadioScore('radio05',['V'],10);
+  score += getRadioScore('true_false_1',['X'],10);
+  score += getRadioScore('true_false_2',['V'],10);
 
-  score += getTextsScore(['pro0501'],['模型是对现实世界的简化和抽象,'+
+  score += getTextsScore(['short_answer_1'],['模型是对现实世界的简化和抽象,'+
     '模型是对所研究的系统、过程、事物或概念的一种表达形'+
     '式。可以是物理实体;可以是某种图形;或者是一种数学表达式。'],20);
 
