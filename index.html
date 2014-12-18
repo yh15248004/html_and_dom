@@ -4,17 +4,27 @@
   <meta charset="UTF-8">
   <title>UML建模测试</title>
   <script type="text/javascript" src="./main.js"></script>
+  <script type="text/javascript" src="./standard.js"></script>
   <script type="text/javascript" src="./lib/lodash/lodash.js"></script>
 </head>
 <body>
-  <h1>统一建模语言测试</h1>
-  <form name="form" id="form" method="post">
-    考试科目：<b><u>统一建模语言UML</u></b>&nbsp;&nbsp;&nbsp;&nbsp;
-    时间:<b><u>100分钟</u></b>&nbsp;&nbsp;&nbsp;&nbsp;
-    得分:<input id="score" name="score" type="text" size="8"/><br/>
-    班级：<input id="student_class" type="text" size="10"/>
-    学号：<input id="student_number" type="text" size="10"/>
-    姓名：<input id="student_name" type="text" size="10"/>
+  <form name="form" id="form" method="post" autocomplete="off">
+    <header>
+      <h1>统一建模语言测试</h1>
+      <table>
+        <tr>
+          <td>考试科目：</td>
+          <td>统一建模语言</td>
+          <td>时间：</td>
+          <td>100分钟</td>
+          <td>得分：<span id="totalScore"></span></td>
+          <td></td>
+        </tr>
+      </table>  
+      班级：<input id="student_class" type="text" size="10"/>
+      学号：<input id="student_number" type="text" size="10"/>
+      姓名：<input id="student_name" type="text" size="10"/>
+    </header>
 
     <h4>一、填空题</h4>
     1. UML 的中文全称是:<input id="pro0101" name="completion-01" type="text" size="16"/><br/>

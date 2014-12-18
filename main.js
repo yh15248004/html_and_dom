@@ -1,9 +1,8 @@
 function printScore() {
 
   validateText();
-  var scoreText = document.getElementById("score");
-  scoreText.value = getScore();
-
+  var scoreText = document.getElementById("totalScore");
+  scoreText.innerText = getScore();
   return false;
 }
 
