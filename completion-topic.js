@@ -15,7 +15,7 @@ CompletionTopic.prototype.calculate = function (document) {
     values.push(document.getElementById(_this.name + '_' + i).value);
   }
 
-  _.forEach(answer, function(acturlAnswer) {
+  _.forEach(_this.answer, function(acturlAnswer) {
     var isExist = _.contains(values, acturlAnswer);
     if (isExist) {
       _this.score += _this.scoreUnit / _this.answer.length;

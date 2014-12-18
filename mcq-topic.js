@@ -8,9 +8,9 @@ McqTopic.prototype.constructor = McqTopic;
 
 McqTopic.prototype.calculate = function (document) {
 
-  var checkboxElements = document.getElementsByName(name);
+  var checkboxElements = document.getElementsByName(this.name);
   var selects = _.filter(checkboxElements, {checked : true});
-  if (_.map(selects, 'value').join('') === answer) {
+  if (_.map(selects, 'value').join('') === this.answer) {
     this.score = this.scoreUnit;
   }
 };
