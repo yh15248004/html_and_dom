@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <title>UML建模测试</title>
@@ -12,63 +12,94 @@
   <script type="text/javascript" src="./js/model/radio-topic.js"></script>
   <script type="text/javascript" src="./js/main.js"></script>
 
-  <link href="./lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="./lib/bootstrap/css/bootstrap.css" rel="stylesheet">
   <link href="./lib/bootstrap/css/bootstrap-theme.min.css" rel="stylesheet">
   <link href="./css/button.css" rel="stylesheet">
 </head>
 
 <body>
 
-  <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg">
-      <div class="modal-content">
-        ...
-      </div>
-    </div>
-  </div>
 
   <form name="form" id="form" method="post" autocomplete="off">
-    <header>
-      <h1 class="text-center">统一建模语言测试</h1>
-      <table>
-        <tr>
-          <td>考试科目：</td>
-          <td>统一建模语言</td>
-          <td>时间：</td>
-          <td>100分钟</td>
-          <td>得分：<span id="totalScore"></span></td>
-          <td></td>
-        </tr>
-        <tr>
-          <td><label for="student_class">班级：</label></td>
-          <td><input class="form-control" type="text" id="student_class" name="student_class"></td>
-          <td><label for="student_number">学号：</label></td>
-          <td><input type="text" id="student_number" name="student_number"></td>
-          <td><label for="student_name">姓名：</label></td>
-          <td><input type="text" id="student_name" name="student_name"></td>
-        </tr>
-      </table>
-    </header>
+    <div class="container">
+      <div class="row text-center">
+          <h1>统一建模语言测试</h1>
+      </div>
 
-    <session>
-      <header>
-        <h4>一、填空题（每空5分，共20分）</h4>
-      </header>
-      <ol>
-        <li>
-          <label>
-            UML的中文全称是：
-            <input type="text" id="completion_1_0" name="completion_1_0">
-          </label>
-        </li>
-        <li>
-          <label for="completion_2_0">对象最突出的特征是：</label>
-          <input type="text" id="completion_2_0" name="completion_2_0">
-          <input type="text" id="completion_2_1" name="completion_2_1">
-          <input type="text" id="completion_2_2" name="completion_2_2">
-        </li>
-      </ol>
-    </session>
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <div class="row">
+            <div class="col-md-4">
+              <label class="control-label">
+                考试科目：
+              </label>
+              统一建模语言
+            </div>
+            <div class="col-md-4">
+              <label class="control-label">
+                时间：
+              </label>
+              100分钟
+            </div>
+            <div id="totalScore_formGroup" class="col-md-4">
+              <label class="control-label">
+                得分：
+              </label>
+              <span id="totalScore" class="text-danger"></span>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel-body">
+          <div class="row form-inline">
+
+            <div class="col-md-4">
+              <label class="control-label">
+                班级：
+              <input class="form-control" placeholder="请输入班级" type="text" id="student_class" name="student_class">
+              </label>
+            </div>
+            <div class="col-md-4">
+              <label class="control-label">
+                学号：
+              <input class="form-control" placeholder="请输入学号" type="text" id="student_number" name="student_number">
+              </label>
+            </div>
+            <div class="col-md-4">
+              <label class="control-label">
+                姓名：
+              <input class="form-control" placeholder="请输入姓名" type="text" id="student_name" name="student_name">
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4>一、填空题（每空5分，共20分）
+        </h4>
+      </div>
+      <div class="panel-body form-inline">
+        <ol>
+          <li>
+            <label>
+              UML的中文全称是：
+              <input class="form-control" type="text" id="completion_1_0" name="completion_1_0">
+            </label>
+          </li>
+          <li>
+            <label for="completion_2_0">对象最突出的特征是：
+            <input class="form-control" type="text" id="completion_2_0" name="completion_2_0">
+            <input class="form-control" type="text" id="completion_2_1" name="completion_2_1">
+            <input class="form-control" type="text" id="completion_2_2" name="completion_2_2">
+            </label>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+  </div>
 
     <section>
       <header>
@@ -199,18 +230,7 @@
     </section>
 
     <footer class="text-center">
-        <input class="button button-pill button-primary" data-toggle="modal" data-target=".bs-example-modal-sm" type="submit" value="计算分数" onclick="return printScore();">
-
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
-
-        <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-sm">
-            <div class="modal-content">
-              ...
-            </div>
-          </div>
-        </div>
-
+        <input class="button button-pill button-primary" type="submit" value="计算分数" onclick="return printScore();">
     </footer>
   </form>
 </body>
