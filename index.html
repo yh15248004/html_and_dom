@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>UML建模测试</title>
-  <script type="text/javascript" src="./lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <script type="text/javascript" src="lib/jquery-2.1.1/jquery-2.1.1.js"></script>
+  <script type="text/javascript" src="lib/bootstrap/js/bootstrap.js"></script>
   <script type="text/javascript" src="./lib/lodash/lodash.js"></script>
   <script type="text/javascript" src="./js/model/topic.js"></script>
   <script type="text/javascript" src="./js/model/answer-factory.js"></script>
@@ -52,19 +54,19 @@
         <div class="panel-body">
           <div class="row form-inline">
 
-            <div class="col-md-4">
+            <div id="student_class_formGroup" class="form-group col-md-4">
               <label class="control-label">
                 班级：
               <input class="form-control" placeholder="请输入班级" type="text" id="student_class" name="student_class">
               </label>
             </div>
-            <div class="col-md-4">
+            <div id="student_number_formGroup" class="form-group col-md-4">
               <label class="control-label">
                 学号：
               <input class="form-control" placeholder="请输入学号" type="text" id="student_number" name="student_number">
               </label>
             </div>
-            <div class="col-md-4">
+            <div id="student_name_formGroup" class="form-group col-md-4">
               <label class="control-label">
                 姓名：
               <input class="form-control" placeholder="请输入姓名" type="text" id="student_name" name="student_name">
@@ -304,9 +306,28 @@
       </div>
 
       <div class="page-footer text-center">
-        <input class="button button-pill button-primary" type="submit" value="计算分数" onclick="return printScore();">
+        <input class="button button-pill button-primary" type="submit" value="计算分数" onclick="return submit_onclick();">
       </div>
+
     </div>
   </form>
+
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+          <h4 class="modal-title" id="myModalLabel">友情提示：</h4>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" data-dismiss="modal" class="btn btn-primary">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>

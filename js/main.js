@@ -1,4 +1,4 @@
-function printScore() {
+function submit_onclick() {
 
   var requiredInputs = [
       {
@@ -36,12 +36,19 @@ function validateRequired(inputs) {
   var result = false;
   for (var i = 0; i < inputs.length; i++) {
     var input = inputs[i];
-    var value = document.getElementById(input.id).value;
-    if (value.length === 0) {
-      alert(input.text+'不能为空！');
-      document.getElementById(input.id).focus();
+    var element = document.getElementById(input.id);
+    var formGroup = document.getElementById(input.id + '_formGroup');
+    if (_.isEmpty(element.value)) {
+      $('#myModal').modal({
+        keyboard: $('div.modal-body').text(input.text+'不能为空！')
+      });
+      formGroup.classList.add('has-error');
+      element.focus();
       result = true;
       break;
+    }
+    if (formGroup.classList.contains('has-error')) {
+      formGroup.classList.toggle('has-error');
     }
   }
 
