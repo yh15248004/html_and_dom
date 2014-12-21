@@ -19,10 +19,9 @@
 
 <body>
 
-
   <form name="form" id="form" method="post" autocomplete="off">
     <div class="container">
-      <div class="row text-center">
+      <div class="page-header text-center">
           <h1>统一建模语言测试</h1>
       </div>
 
@@ -170,138 +169,144 @@
           </ol>
         </div>
       </div>
-    </div>
-    <!-- <section>
-      <header>
-        <h4>二、选择题（每题10分，共20分）</h4>
-      </header>
-      <ol>
-        <li>
-          <p>UML与软件工程的关系是：</p>
-          <label>
-            <input type="radio" id="choice_1_0" name="choice_1" value="A">
-            (A)&nbsp;UML就是软件工程
-          </label><br>
-          <label>
-            <input type="radio" id="choice_1_1" name="choice_1" value="B">
-            (B)&nbsp;UML参与到软件工程中软件开发过程的几个阶段
-          </label><br>
-          <label>
-            <input type="radio" id="choice_1_2" name="choice_1" value="C">
-            (C)&nbsp;UML与软件工程无关
-          </label><br>
-          <label>
-            <input type="radio" id="choice_1_3" name="choice_1" value="D">
-            (D)&nbsp;UML是软件工程的一部分
-          </label>
-        </li>
-        <li>
-          <p>Java语言支持：</p>
-          <label>
-            <input type="radio" id="choice_2_0" name="choice_2" value="A">
-            (A)&nbsp;单继承
-          </label><br>
-          <label>
-            <input type="radio" id="choice_2_1" name="choice_2" value="B">
-            (B)&nbsp;多继承
-          </label><br>
-          <label>
-            <input type="radio" id="choice_2_2" name="choice_2" value="C">
-            (C)&nbsp;单继承和多继承都支持
-          </label><br>
-          <label>
-            <input type="radio" id="choice_2_3" name="choice_2" value="D">
-            (D)&nbsp;单继承和多继承都不支持
-          </label>
-        </li>
-      </ol>
-    </section> -->
 
-    <section>
-      <header>
-        <h4>三、多项选择题（每题10分，共20分）</h4>
-      </header>
-      <ol>
-        <li>
-          <p>用例的粒度分为以下哪三种：</p>
-          <label>
-            <input type="checkbox" id="mcq_1_0" name="mcq_1" value="A">
-            (A)&nbsp;概述级
-          </label><br>
-          <label>
-            <input type="checkbox" id="mcq_1_1" name="mcq_1" value="B">
-            (B)&nbsp;需求级
-          </label><br>
-          <label>
-            <input type="checkbox" id="mcq_1_2" name="mcq_1" value="C">
-            (C)&nbsp;用户目标级
-          </label><br>
-          <label>
-            <input type="checkbox" id="mcq_1_3" name="mcq_1" value="D">
-            (D)&nbsp;子功能级
-          </label>
-        </li>
-        <li>
-          <p>类图由以下哪三部分组成：</p>
-          <label>
-            <input type="checkbox" id="mcq_2_0" name="mcq_2" value="A">
-            (A)&nbsp;名称(Name)
-          </label><br>
-          <label>
-            <input type="checkbox" id="mcq_2_1" name="mcq_2" value="B">
-            (B)&nbsp;属性(Attribute)
-          </label><br>
-          <label>
-            <input type="checkbox" id="mcq_2_2" name="mcq_2" value="C">
-            (C)&nbsp;操作(Operation)
-          </label><br>
-          <label>
-            <input type="checkbox" id="mcq_2_3" name="mcq_2" value="D">
-            (D)&nbsp;方法(Function)
-          </label>
-        </li>
-      </ol>
-    </section>
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>三、多项选择题（每题10分，共20分）</h4>
+        </div>
+        <div class="panel-body">
+          <ol>
+            <li>
+              <div class="form-group">
+                <label class="control-label">
+                  用例的粒度分为以下哪三种：
+                </label>
 
-    <section>
-      <header>
-        <h4>四、判断题（每题10分，共20分）</h4>
-      </header>
-      <ol>
-        <li>
-          <label>
-            用例图只是用于和客户交流和沟通的,用于确定需求。
-          </label>
-          <input type="radio" id="true_false_1_0" name="true_false_1" value="V">√
-          <input type="radio" id="true_false_1_1" name="true_false_1" value="X">×
-        </li>
-        <li>
-          <label>
-            在状态图中,终止状态在一个状态图中允许有任意多个。
-          </label>
-          <input type="radio" id="true_false_2_0" name="true_false_2" value="V">√
-          <input type="radio" id="true_false_2_1" name="true_false_2" value="X">×
-        </li>
-      </ol>
-    </section>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="mcq_1_0" name="mcq_1" value="A">
+                    (A)&nbsp;概述级
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="mcq_1_1" name="mcq_1" value="B">
+                    (B)&nbsp;需求级
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="mcq_1_2" name="mcq_1" value="C">
+                    (C)&nbsp;用户目标级
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="mcq_1_3" name="mcq_1" value="D">
+                    (D)&nbsp;子功能级
+                  </label>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="form-group">
+                <label class="control-label">
+                  类图由以下哪三部分组成：
+                </label>
 
-    <section>
-      <header>
-        <h4>五、简答题（每题20分，共20分）</h4>
-      </header>
-      <ol>
-        <li>
-          <label>
-            简述什么是模型以及模型的表现形式？<br>
-            <textarea id="short_answer_1_0" name="short_answer_1" rows="8" cols="80"></textarea>
-          </label>
-        </li>
-      </ol>
-    </section>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="mcq_2_0" name="mcq_2" value="A">
+                    (A)&nbsp;名称(Name)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="mcq_2_1" name="mcq_2" value="B">
+                    (B)&nbsp;属性(Attribute)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="mcq_2_2" name="mcq_2" value="C">
+                    (C)&nbsp;操作(Operation)
+                  </label>
+                </div>
+                <div class="checkbox">
+                  <label>
+                    <input type="checkbox" id="mcq_2_3" name="mcq_2" value="D">
+                    (D)&nbsp;方法(Function)
+                  </label>
+                </div>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
 
-    <footer class="text-center">
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>四、判断题（每题10分，共20分）</h4>
+        </div>
+        <div class="panel-body">
+          <ol>
+            <li>
+              <div class="form-group">
+                <label class="control-label">
+                  用例图只是用于和客户交流和沟通的,用于确定需求。
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" id="true_false_1_0" name="true_false_1" value="V">
+                  <span class="glyphicon glyphicon-ok text-success"></span>
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" id="true_false_1_1" name="true_false_1" value="X">
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                </label>
+              </div>
+            </li>
+            <li>
+              <div class="form-group">
+                <label class="control-label">
+                  在状态图中,终止状态在一个状态图中允许有任意多个。
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" id="true_false_2_0" name="true_false_2" value="V">
+                  <span class="glyphicon glyphicon-ok text-success"></span>
+                </label>
+                <label class="radio-inline">
+                  <input type="radio" id="true_false_2_1" name="true_false_2" value="X">
+                  <span class="glyphicon glyphicon-remove text-danger"></span>
+                </label>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          <h4>五、简答题（每题20分，共20分）</h4>
+        </div>
+        <div class="panel-body">
+          <ol>
+            <li>
+              <div class="form-group">
+                <label class="control-label">
+                  简述什么是模型以及模型的表现形式？
+                </label>
+                <textarea id="short_answer_1_0" name="short_answer_1" class="form-control" rows="3">
+                </textarea>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+
+      <div class="page-footer text-center">
         <input class="button button-pill button-primary" type="submit" value="计算分数" onclick="return printScore();">
-    </footer>
+      </div>
+    </div>
   </form>
 </body>
 </html>
