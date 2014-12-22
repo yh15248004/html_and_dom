@@ -5,7 +5,6 @@ function Topic(name, answer, scoreUnit) {
   this.score = 0;
 }
 
-Topic.prototype.calculate = function (document) {
+Topic.prototype.calculate = function () {
   // need to overriding this function.
 };
-  

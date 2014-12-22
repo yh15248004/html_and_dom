@@ -6,7 +6,7 @@ McqTopic.prototype = Object.create(Topic.prototype);
 
 McqTopic.prototype.constructor = McqTopic;
 
-McqTopic.prototype.calculate = function (document) {
+McqTopic.prototype.calculate = function () {
 
   var checkboxElements = $("[name="+this.name+"]");
   var selects = _.filter(checkboxElements, {checked : true});

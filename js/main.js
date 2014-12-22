@@ -21,7 +21,7 @@ function submit_onclick() {
 
   var topics = buildTopics();
 
-  var answerFactory = new AnswerFactory(document, topics);
+  var answerFactory = new AnswerFactory(topics);
 
   var totalScoreElement = $('#totalScore');
   if (totalScoreElement) {

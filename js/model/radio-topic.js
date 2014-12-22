@@ -6,7 +6,7 @@ RadioTopic.prototype = Object.create(Topic.prototype);
 
 RadioTopic.prototype.constructor = RadioTopic;
 
-RadioTopic.prototype.calculate = function (document) {
+RadioTopic.prototype.calculate = function () {
 
   _this = this;
   var radioElements = $("[name="+this.name+"]");

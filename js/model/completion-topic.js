@@ -6,7 +6,7 @@ CompletionTopic.prototype = Object.create(Topic.prototype);
 
 CompletionTopic.prototype.constructor = CompletionTopic;
 
-CompletionTopic.prototype.calculate = function (document) {
+CompletionTopic.prototype.calculate = function () {
 
   var _this = this;
   var values = [];

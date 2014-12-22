@@ -1,5 +1,4 @@
-function AnswerFactory(document, topics) {
-  this.document = document;
+function AnswerFactory(topics) {
   this.topics = topics;
 }
 
@@ -8,7 +7,7 @@ AnswerFactory.prototype.getTotalScore = function () {
   var _this = this;
 
   _.each(this.topics, function (topic) {
-    topic.calculate(_this.document);
+    topic.calculate();
   });
 
   var scores = _.map(_this.topics, 'score');
