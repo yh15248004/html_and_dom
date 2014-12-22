@@ -23,9 +23,9 @@ function submit_onclick() {
 
   var answerFactory = new AnswerFactory(document, topics);
 
-  var totalScoreElement = document.getElementById('totalScore');
+  var totalScoreElement = $('#totalScore');
   if (totalScoreElement) {
-    totalScoreElement.innerText = answerFactory.getTotalScore();
+    totalScoreElement.html(answerFactory.getTotalScore());
   }
 
   return false;
@@ -36,19 +36,19 @@ function validateRequired(inputs) {
   var result = false;
   for (var i = 0; i < inputs.length; i++) {
     var input = inputs[i];
-    var element = document.getElementById(input.id);
-    var formGroup = document.getElementById(input.id + '_formGroup');
-    if (_.isEmpty(element.value)) {
+    var element = $('#' + input.id);
+    var formGroup = element.parent().parent();
+    if (_.isEmpty(element.val())) {
       $('#myModal').modal({
         keyboard: $('div.modal-body').text(input.text+'不能为空！')
       });
-      formGroup.classList.add('has-error');
+      formGroup.addClass('has-error');
       element.focus();
       result = true;
       break;
     }
-    if (formGroup.classList.contains('has-error')) {
-      formGroup.classList.toggle('has-error');
+    if (formGroup.hasClass('has-error')) {
+      formGroup.removeClass('has-error');
     }
   }
 
