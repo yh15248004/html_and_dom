@@ -11,7 +11,7 @@ AnswerFactory.prototype.getTotalScore = function () {
     topic.calculate(_this.document);
   });
 
-  var scores = _.pluck(_this.topics, 'score');
+  var scores = _.map(_this.topics, 'score');
   return _.reduce(scores, function (scoreA, scoreB) {
     return scoreA + scoreB;
   });

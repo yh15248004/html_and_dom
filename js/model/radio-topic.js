@@ -9,7 +9,7 @@ RadioTopic.prototype.constructor = RadioTopic;
 RadioTopic.prototype.calculate = function (document) {
 
   _this = this;
-  var radioElements = document.getElementsByName(this.name);
+  var radioElements = $("[name="+this.name+"]");
 
   var radioElement = _.find(radioElements, function(radioElement) {
     return radioElement.checked && radioElement.value === _this.answer;

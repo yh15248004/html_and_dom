@@ -12,7 +12,7 @@ CompletionTopic.prototype.calculate = function (document) {
   var values = [];
 
   for (var i = 0; i < _this.answer.length; i++) {
-    values.push(document.getElementById(_this.name + '_' + i).value);
+    values.push($('#'+_this.name + '_' + i).val());
   }
 
   _.forEach(_this.answer, function(acturlAnswer) {
